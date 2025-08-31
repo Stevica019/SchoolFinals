@@ -1,0 +1,22 @@
+.auth-text {
+    color: white;
+    margin: 0;
+}
+.auth-text a {
+    color: red;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+.form-fields {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

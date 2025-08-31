@@ -1,0 +1,41 @@
+#card-component {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#card-component img {
+    height: 200px;
+}
+.card-information {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px 10px;
+    gap: 10px;
+}
+.card-information hr {
+    width: 100%;
+}
+.card-information h3,
+p,
+hr {
+    margin: 0;
+}
+.card-information button {
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: rgb(26, 122, 248);
+    padding: 8px 16px;
+    font-weight: bold;
+}
+.card-information button:hover {
+    transition: all 0.25s ease;
+    background-color: rgb(56, 140, 250);
+}
+.card-information button:active {
+    transition: all 0.25s ease;
+    background-color: rgb(0, 110, 255);
+}

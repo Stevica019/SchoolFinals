@@ -1,0 +1,40 @@
+.Navigation-bar {
+    background: #020024;
+    background: linear-gradient(
+        120deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    padding: 10px 20px;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.Navigation-bar a {
+    color: white;
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.right-nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+@media screen and (width < 768px) {
+    .nav-links {
+        justify-content: center;
+        gap: 10px;
+    }
+}

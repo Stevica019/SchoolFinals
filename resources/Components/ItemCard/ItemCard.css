@@ -1,0 +1,41 @@
+.item-card {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: rgba(160, 160, 160, 0.25);
+    border-radius: 8px;
+}
+.item-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 15px;
+    gap: 5px;
+}
+.item-text p {
+    margin: 0;
+}
+.car-name {
+    font-weight: bold;
+}
+
+@media screen and (width<768px) {
+    .item-text {
+        font-size: 1rem;
+        align-items: center;
+    }
+
+    .item-img {
+        width: 100%;
+    }
+    .car-name {
+        text-align: center;
+        font-size: 1.25rem;
+    }
+}
