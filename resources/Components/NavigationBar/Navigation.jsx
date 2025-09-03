@@ -22,9 +22,14 @@ export default function NavigationBar() {
                 </div>
                 <div className="right-nav-buttons">
                     {isLoggedIn ? (
-                        <Link href="/logout" method="post" id="link-like">
-                            Logout
-                        </Link>
+                        <>
+                            <Link href="/newcar" id="link-like">
+                                New Car
+                            </Link>
+                            <Link href="/logout" method="post" id="link-like">
+                                Logout
+                            </Link>
+                        </>
                     ) : (
                         <>
                             <Link href="/login">Login</Link>
