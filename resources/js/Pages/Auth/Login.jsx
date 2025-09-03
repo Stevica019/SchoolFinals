@@ -16,9 +16,6 @@ const Login = () => {
         post("/login");
     };
 
-    console.log(errors.email);
-    console.log(errors.password);
-
     return (
         <form className="form-fields" onSubmit={submitLogin}>
             <InputsField

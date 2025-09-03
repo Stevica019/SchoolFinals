@@ -74,9 +74,6 @@ export default function HomePage() {
     return (
         <>
             <HomeHero />
-            <form method="POST" action="/logout">
-                <button type="submit">Logout</button>
-            </form>
             <div className="item-container">
                 <Card
                     image="https://picsum.photos/1600/900?random=1"

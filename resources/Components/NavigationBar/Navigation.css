@@ -32,6 +32,12 @@
     display: flex;
     gap: 10px;
 }
+#link-like {
+    border: none;
+    background-color: unset;
+    color: white;
+    font: inherit;
+}
 @media screen and (width < 768px) {
     .nav-links {
         justify-content: center;

@@ -9,8 +9,6 @@ const ForgotPassword = () => {
     const handleFormChange = (e) => {
         setEmail(e.target.value);
     };
-    console.log(email);
-
     return (
         <>
             <InputsField

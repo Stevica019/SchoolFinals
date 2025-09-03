@@ -18,27 +18,23 @@ class RegisterUserController extends Controller
 
    public function store(Request $request)
 {
-    // dd('Incoming request:', $request->all());
-
     $validated = $request->validate([
         'name' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         'password' => ['required', 'confirmed',Rules\Password::defaults()],
     ]);
 
-    // dd('Validated data:', $validated);
 
     $user = \App\Models\User::create([
         'name' => $validated['name'],
         'email' => $validated['email'],
-        'password' => $validated['password'], // auto-hashed by model cast
+        'password' => $validated['password'],
     ]);
 
-    // dd('User created:', $user);
 
-    auth()->login($user);
+    // auth()->login($user);
 
-    return redirect()->route('/');
+    return redirect("/login");
 }
 
 }

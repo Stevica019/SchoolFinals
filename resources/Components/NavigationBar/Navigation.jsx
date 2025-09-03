@@ -1,7 +1,9 @@
-import { Link } from "@inertiajs/react";
+import { usePage, Link } from "@inertiajs/react";
 import "./Navigation.css";
 
 export default function NavigationBar() {
+    const { auth } = usePage().props;
+    const isLoggedIn = auth?.user;
     return (
         <div className="Navigation-bar">
             <div
@@ -19,8 +21,16 @@ export default function NavigationBar() {
                     <Link href="/about">About</Link>
                 </div>
                 <div className="right-nav-buttons">
-                    <Link href="/login">Login</Link>
-                    <Link href="/register">Register</Link>
+                    {isLoggedIn ? (
+                        <Link href="/logout" method="post" id="link-like">
+                            Logout
+                        </Link>
+                    ) : (
+                        <>
+                            <Link href="/login">Login</Link>
+                            <Link href="/register">Register</Link>
+                        </>
+                    )}
                 </div>
             </div>
         </div>
