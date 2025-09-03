@@ -1,0 +1,24 @@
+.upload-file-container {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    gap: 15px;
+    border-radius: 8px;
+}
+.upload-file-container img {
+    width: 50px;
+    height: 50px;
+}
+.upload-file-container button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
