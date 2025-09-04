@@ -8,12 +8,13 @@ import Button from "../../../../Components/Button/Button";
 export default function NewCarPage() {
     const fileSelectRef = useRef(null);
     const [imagePreviews, setImagePreviews] = useState([]);
-    const { data, setData, post, processing, errors, transform } = useForm({
-        carName: "",
-        carModel: "",
-        carYear: "",
-        carImages: [],
-    });
+    const { data, setData, post, processing, errors, transform, reset } =
+        useForm({
+            carName: "",
+            carModel: "",
+            carYear: "",
+            carImages: [],
+        });
 
     const handleFileChange = (e) => {
         const files = Array.from(e.target.files);
@@ -33,7 +34,13 @@ export default function NewCarPage() {
             images: data.carImages,
         }));
 
-        post("/newcar", { forceFormData: true });
+        post("/newcar", {
+            forceFormData: true,
+            onSuccess: () => {
+                reset();
+                setImagePreviews([]);
+            },
+        });
     };
     console.log(data);
 
