@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
-import InputsField from "../../../../Components/InputField/Input";
-import UploadFiles from "../../../../Components/UploadFile/UploadFile";
+import InputsField from "@/Components/InputField/Input";
+import UploadFiles from "@/Components/UploadFile/UploadFile";
 import "./NewCar.css";
 import { useForm } from "@inertiajs/react";
-import Button from "../../../../Components/Button/Button";
+import Button from "@/Components/Button/Button";
 
 export default function NewCarPage() {
     const fileSelectRef = useRef(null);
