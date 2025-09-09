@@ -1,7 +1,7 @@
 import { usePage, Link } from "@inertiajs/react";
 import "./Navigation.css";
 
-export default function NavigationBar() {
+export default function NavigationBar({ BurgerClick }) {
     const { auth } = usePage().props;
     const isLoggedIn = auth?.user;
     return (
@@ -37,6 +37,11 @@ export default function NavigationBar() {
                         </>
                     )}
                 </div>
+            </div>
+            <div className="burger-menu" onClick={BurgerClick}>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     );

@@ -1,0 +1,44 @@
+.side-menu-container {
+    background: #020024;
+    background: linear-gradient(
+        120deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    gap: 10px;
+    font-size: 1.25rem;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.side-menu-container.open {
+    transform: translateX(0);
+}
+
+.side-menu-container a {
+    color: white;
+    text-decoration: none;
+    font-size: inherit;
+}
+
+.side-menu-container button {
+    background-color: unset;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: inherit;
+    font: inherit;
+    cursor: pointer;
+}

@@ -49,3 +49,34 @@
         gap: 10px;
     }
 }
+.burger-menu {
+    display: none;
+}
+.burger-menu span {
+    width: 24px;
+    height: 2px;
+    background-color: white;
+}
+@media screen and (width<768px) {
+    .nav-links {
+        display: none;
+    }
+    .Navigation-bar {
+        justify-content: space-between;
+    }
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        border-radius: 8px;
+        transition: 0.3s ease;
+        background-color: none;
+    }
+    .burger-menu:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .burger-menu:active {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
