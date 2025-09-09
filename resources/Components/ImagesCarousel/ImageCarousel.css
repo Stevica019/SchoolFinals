@@ -1,0 +1,32 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.item-img {
+    width: 100%;
+    min-height: 100px;
+    border-radius: 8px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4b4b4b;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #d6d6d6;
+}

@@ -4,11 +4,7 @@
     width: fit-content;
     background-color: rgba(160, 160, 160, 0.25);
     border-radius: 8px;
-}
-.item-img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
 }
 .item-text {
     display: flex;
@@ -29,10 +25,6 @@
     .item-text {
         font-size: 1rem;
         align-items: center;
-    }
-
-    .item-img {
-        width: 100%;
     }
     .car-name {
         text-align: center;
