@@ -1,14 +1,25 @@
 import "./ItemCard.css";
 
-export default function ItemCard({ data }) {
+export default function ItemCard({ make, model, images = [], yearOfMake }) {
     return (
         <div className="item-card">
-            <img className="item-img" src={data.image} alt="Car image" />
+            {images.length > 1 ? (
+                images.map((image) => (
+                    <img
+                        key={image.id}
+                        className="item-img"
+                        src={image}
+                        alt="Car image"
+                    />
+                ))
+            ) : (
+                <img className="item-img" src={images[0]} alt="Car image" />
+            )}
             <div className="item-text">
                 <p className="car-name">
-                    {data.make} {data.model}
+                    {make} {model}
                 </p>
-                <p>Year: {data.yearOfMake}</p>
+                <p>Year: {yearOfMake}</p>
             </div>
         </div>
     );

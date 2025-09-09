@@ -1,0 +1,7 @@
+.cars-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    justify-content: center;
+}

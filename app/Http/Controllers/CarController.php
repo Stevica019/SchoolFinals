@@ -12,10 +12,13 @@ class CarController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+public function index()
+{
+    $cars = Car::all();
+    return Inertia::render('AppPages/Cars/Cars', [
+        'cars' => $cars,
+    ]);
+}
 
     /**
      * Show the form for creating a new resource.
