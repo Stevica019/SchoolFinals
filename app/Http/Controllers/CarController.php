@@ -51,7 +51,7 @@ public function index()
             'name'   => $data['name'],
             'model'  => $data['model'],
             'year'   => $data['year'],
-            'images' => json_encode($paths),
+            'images' => $paths,
         ]);
 
         return redirect()->back()->with('success', 'Car added successfully!');
