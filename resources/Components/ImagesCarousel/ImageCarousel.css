@@ -6,7 +6,7 @@
 
 .item-img {
     width: 100%;
-    min-height: 100px;
+    height: 200px;
     border-radius: 8px;
 }
 
@@ -29,4 +29,9 @@
 
 .dot.active {
     background-color: #d6d6d6;
+}
+@media screen and(width<768px) {
+    .item-img {
+        height: 100px;
+    }
 }

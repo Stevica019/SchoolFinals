@@ -42,7 +42,6 @@ export default function NewCarPage() {
             },
         });
     };
-    console.log(data);
 
     return (
         <form className="new-car-form" onSubmit={handleSubmit}>

@@ -37,7 +37,7 @@ public function index()
             'name'  => 'required|string|max:255',
             'model' => 'required|string|max:255',
             'year'  => 'required|integer|min:1900|max:' . date('Y'),
-            'images.*' => 'image|max:2048',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $paths = [];
@@ -51,7 +51,7 @@ public function index()
             'name'   => $data['name'],
             'model'  => $data['model'],
             'year'   => $data['year'],
-            'images' => $paths,
+            'images' => json_encode($paths),
         ]);
 
         return redirect()->back()->with('success', 'Car added successfully!');

@@ -20,7 +20,7 @@ export default function ImageCarousel({ images = [] }) {
         <div className="carousel">
             <img
                 className="item-img"
-                src={images[current]}
+                src={`/storage/${images[current]}`}
                 alt={`Car image ${current + 1}`}
             />
 
