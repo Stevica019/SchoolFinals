@@ -9,13 +9,7 @@ export default function () {
     return (
         <div className="cars-container">
             {cars.map((car) => (
-                <ItemCard
-                    key={car.id}
-                    make={car.name}
-                    model={car.model}
-                    yearOfMake={car.year}
-                    images={car.images}
-                />
+                <ItemCard key={car.id} car={car} />
             ))}
         </div>
     );

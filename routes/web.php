@@ -28,6 +28,7 @@ Route::get('/about', function () {
     return Inertia::render('AppPages/About/AboutPage');
 });
 Route::get('/cars', [CarController::class, 'index']);
+Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('cars.destroy');
 Route::get('/newcar', [CarController::class, 'create'])->name('newcar');
 Route::post('/newcar', [CarController::class, 'store'])->name('newcar.store');
 

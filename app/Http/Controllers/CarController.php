@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class CarController extends Controller
@@ -84,8 +85,16 @@ public function index()
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(Car $car)
+{
+    if (!empty($car->images)) {
+        foreach ($car->images as $imagePath) {
+            Storage::disk('public')->delete($imagePath);
+        }
     }
+
+    $car->delete();
+
+    return redirect()->back()->with('success', 'Car deleted successfully!');
+}
 }
