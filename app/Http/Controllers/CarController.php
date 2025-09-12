@@ -63,9 +63,9 @@ public function index()
      */
     public function show(Car $car)
     {
-    //     return Inertia::render('AppPages/Cars/Car', [
-    //     'car' => $car,
-    // ]);
+        return Inertia::render('AppPages/Cars/Car', [
+        'car' => $car,
+    ]);
     }
 
     /**

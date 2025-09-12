@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ImageCarousel.css";
 
-export default function ImageCarousel({ images = [] }) {
+export default function ImageCarousel({ images = [], sx = {} }) {
     const [current, setCurrent] = useState(0);
 
     // Autoscroll every 5s
@@ -17,7 +17,7 @@ export default function ImageCarousel({ images = [] }) {
     if (!images || images.length === 0) return null;
 
     return (
-        <div className="carousel">
+        <div className="carousel" style={{ ...sx }}>
             <img
                 className="item-img"
                 src={`/storage/${images[current]}`}
