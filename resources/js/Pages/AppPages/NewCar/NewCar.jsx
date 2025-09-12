@@ -34,7 +34,7 @@ export default function NewCarPage() {
             images: data.carImages,
         }));
 
-        post("/newcar", {
+        post("/cars", {
             forceFormData: true,
             onSuccess: () => {
                 reset();

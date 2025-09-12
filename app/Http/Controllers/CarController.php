@@ -61,9 +61,11 @@ public function index()
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Car $car)
     {
-        //
+    //     return Inertia::render('AppPages/Cars/Car', [
+    //     'car' => $car,
+    // ]);
     }
 
     /**

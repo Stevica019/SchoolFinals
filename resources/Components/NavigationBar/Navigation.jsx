@@ -23,7 +23,7 @@ export default function NavigationBar({ BurgerClick }) {
                 <div className="right-nav-buttons">
                     {isLoggedIn ? (
                         <>
-                            <Link href="/newcar" id="link-like">
+                            <Link href="/cars/create" id="link-like">
                                 New Car
                             </Link>
                             <Link href="/logout" method="post" id="link-like">
