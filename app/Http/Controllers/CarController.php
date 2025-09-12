@@ -95,6 +95,6 @@ public function index()
 
     $car->delete();
 
-    return redirect()->back()->with('success', 'Car deleted successfully!');
+    return redirect()->route('cars.index')->with('success', 'Car deleted successfully!');
 }
 }

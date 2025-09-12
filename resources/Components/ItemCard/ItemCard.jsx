@@ -1,8 +1,19 @@
 import ImageCarousel from "../ImagesCarousel/ImageCarousel";
 import "./ItemCard.css";
-import { Link } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 
 export default function ItemCard({ car }) {
+    const { delete: destroy } = useForm();
+
+    const handleDelete = () => {
+        if (confirm("Are you sure you want to delete this car?")) {
+            destroy(`/cars/${car.id}`, {
+                onSuccess: () => {
+                    console.log("Success");
+                },
+            });
+        }
+    };
     return (
         <div className="item-card">
             <ImageCarousel images={car.images} />
@@ -11,23 +22,7 @@ export default function ItemCard({ car }) {
                     {car.name} {car.model}
                 </p>
                 <p>Year: {car.year}</p>
-                <Link
-                    href={`/cars/${car.id}`}
-                    prefetch={false}
-                    method="delete"
-                    as="button"
-                    onClick={(e) => {
-                        if (
-                            !confirm(
-                                "Are you sure you want to delete this car?"
-                            )
-                        ) {
-                            e.preventDefault();
-                        }
-                    }}
-                >
-                    Delete
-                </Link>
+                <button onClick={handleDelete}>Delete</button>
             </div>
         </div>
     );
