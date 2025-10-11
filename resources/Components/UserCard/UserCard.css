@@ -1,0 +1,22 @@
+.user-card {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+}
+.user-card p {
+    color: rgb(255, 255, 255);
+}
+.user-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.user-card:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.user-card:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}

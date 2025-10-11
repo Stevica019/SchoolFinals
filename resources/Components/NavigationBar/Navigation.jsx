@@ -1,9 +1,11 @@
 import { usePage, Link } from "@inertiajs/react";
 import "./Navigation.css";
+import UserCard from "../UserCard/UserCard";
 
 export default function NavigationBar({ BurgerClick }) {
     const { auth } = usePage().props;
     const isLoggedIn = auth?.user;
+    const user = auth?.user;
     return (
         <div className="Navigation-bar">
             <div
@@ -22,15 +24,16 @@ export default function NavigationBar({ BurgerClick }) {
                 </div>
                 <div className="right-nav-buttons">
                     {isLoggedIn ? (
-                        <>
-                            <Link href="/cars/create" id="link-like">
-                                New Car
-                            </Link>
-                            <Link href="/logout" method="post" id="link-like">
-                                Logout
-                            </Link>
-                        </>
+                        <UserCard userData={user} />
                     ) : (
+                        // <>
+                        //     <Link href="/cars/create" id="link-like">
+                        //         New Car
+                        //     </Link>
+                        //     <Link href="/logout" method="post" id="link-like">
+                        //         Logout
+                        //     </Link>
+                        // </>
                         <>
                             <Link href="/login">Login</Link>
                             <Link href="/register">Register</Link>

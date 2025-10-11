@@ -4,8 +4,6 @@ import ImageCarousel from "@/Components/ImagesCarousel/ImageCarousel";
 
 export default function Car() {
     const car = usePage().props.car;
-    console.log(car);
-
     return (
         <div className="car-container">
             <ImageCarousel

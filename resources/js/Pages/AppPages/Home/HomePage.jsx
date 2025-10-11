@@ -1,6 +1,6 @@
-import Card from "../../../../Components/Card/Card";
-import HomeHero from "../../../../Components/HomeHero/HomeHero";
 import "./Home.css";
+import HomeHero from "@/Components/HomeHero/HomeHero";
+import Card from "@/Components/Card/Card";
 
 export default function HomePage() {
     return (
@@ -16,13 +16,9 @@ export default function HomePage() {
                 />
             </div>
             <h2 style={{ color: "white", textAlign: "center" }}>
-                Most viewed cars
+                Our top picks
             </h2>
-            <div className="item-container">
-                {/* {mockCars.map((car) => (
-                    <ItemCard key={car.id} data={car} />
-                ))} */}
-            </div>
+            <div className="item-container"></div>
         </>
     );
 }
