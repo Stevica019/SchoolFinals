@@ -1,14 +1,27 @@
 import "./UserCard.css";
 
-export default function UserCard({ userData, userClick }) {
+export default function UserCard({ userData, userClick, alternative = false }) {
     return (
-        <div className="user-card" onClick={userClick}>
-            <img
-                src={userData.image}
-                alt={userData.name}
-                className="user-image"
-            />
-            <p>{userData.name}</p>
-        </div>
+        <>
+            {alternative ? (
+                <div className="alt-user-card" onClick={userClick}>
+                    <img
+                        src={userData.image}
+                        alt={userData.name}
+                        className="alt-image"
+                    />
+                    <p>{userData.name}</p>
+                </div>
+            ) : (
+                <div className="user-card" onClick={userClick}>
+                    <img
+                        src={userData.image}
+                        alt={userData.name}
+                        className="user-image"
+                    />
+                    <p>{userData.name}</p>
+                </div>
+            )}
+        </>
     );
 }

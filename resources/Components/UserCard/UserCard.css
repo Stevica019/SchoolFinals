@@ -5,8 +5,6 @@
     padding: 6px;
     border-radius: 8px;
     transition: 0.5s ease;
-}
-.user-card p {
     color: rgb(255, 255, 255);
 }
 .user-image {
@@ -18,5 +16,29 @@
     background-color: rgba(255, 255, 255, 0.25);
 }
 .user-card:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.alt-user-card {
+    transition: 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 8px;
+    align-self: center;
+    border-radius: 8px;
+}
+.alt-image {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.alt-user-card:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.alt-user-card:active {
     background-color: rgba(255, 255, 255, 0.4);
 }
