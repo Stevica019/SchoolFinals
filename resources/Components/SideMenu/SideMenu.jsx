@@ -6,7 +6,7 @@ export default function SideMenu({ open, onClose, links = [] }) {
     const { user } = usePage().props.auth;
     return (
         <div className={`side-menu-container ${open ? "open" : ""}`}>
-            <UserCard userData={user} alternative />
+            {user && <UserCard userData={user} alternative />}
             {links
                 .filter((link) => link?.pathname)
                 .map((link, index) => (

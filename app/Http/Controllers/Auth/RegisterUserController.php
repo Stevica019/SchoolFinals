@@ -22,13 +22,17 @@ class RegisterUserController extends Controller
         'name' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         'password' => ['required', 'confirmed',Rules\Password::defaults()],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
     ]);
+
+    $imagePath = $request->file('image')->store('user_images', 'public');
 
 
     $user = \App\Models\User::create([
         'name' => $validated['name'],
         'email' => $validated['email'],
         'password' => $validated['password'],
+        'image' => $imagePath,
     ]);
 
 

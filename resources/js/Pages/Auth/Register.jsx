@@ -2,16 +2,20 @@ import { Link } from "@inertiajs/react";
 import "./Auth.css";
 import InputsField from "../../../Components/InputField/Input";
 import Layout from "../../Layouts/AuthLayout/Layout";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Button from "../../../Components/Button/Button";
 import { useForm } from "@inertiajs/react";
+import UploadAvatar from "@/Components/UploadFile/UploadAvatar";
 
 const Register = () => {
+    const [imagePreview, setImagePreview] = useState(null);
+    const uploadFileRef = useRef(null);
     const { data, setData, post, processing, errors } = useForm({
         name: "",
         email: "",
         password: "",
         password_confirmation: "",
+        image: null,
     });
 
     const RegisterSubmit = (e) => {
@@ -19,8 +23,17 @@ const Register = () => {
         post("/register");
     };
 
+    const handleUploadFile = (e) => {
+        const file = e.target.files[0];
+        setImagePreview(URL.createObjectURL(file));
+        setData("image", file);
+    };
     return (
         <form className="form-fields" onSubmit={RegisterSubmit}>
+            <UploadAvatar
+                imagePreview={imagePreview}
+                onContainerClick={() => uploadFileRef.current.click()}
+            />
             <InputsField
                 label="Email"
                 placeholder="Your email..."
@@ -66,6 +79,12 @@ const Register = () => {
             <p className="auth-text">
                 Already have an account? <Link href={"/login"}>Login</Link>
             </p>
+            <input
+                type="file"
+                style={{ display: "none" }}
+                ref={uploadFileRef}
+                onChange={handleUploadFile}
+            />
             {errors.name && <div>{errors.name}</div>}
             {errors.email && <div>{errors.email}</div>}
             {errors.password && <div>{errors.password}</div>}
