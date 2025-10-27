@@ -6,6 +6,8 @@
     border-radius: 8px;
     transition: 0.5s ease;
     color: rgb(255, 255, 255);
+    cursor: pointer;
+    user-select: none;
 }
 .user-image {
     width: 32px;

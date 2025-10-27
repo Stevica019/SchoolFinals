@@ -1,6 +1,7 @@
-import { usePage, Link } from "@inertiajs/react";
+import { usePage, Link, router } from "@inertiajs/react";
 import "./Navigation.css";
 import UserCard from "../UserCard/UserCard";
+import SSLogo from "../../assets/images/SSlogo.png";
 
 export default function NavigationBar({ BurgerClick }) {
     const { auth } = usePage().props;
@@ -8,14 +9,7 @@ export default function NavigationBar({ BurgerClick }) {
     const user = auth?.user;
     return (
         <div className="Navigation-bar">
-            <div
-                style={{
-                    width: "40px",
-                    height: "40px",
-                    backgroundColor: "gray",
-                    marginRight: "10px",
-                }}
-            ></div>
+            <img src={SSLogo} alt="Company log" />
             <div className="nav-links">
                 <div className="nav-buttons">
                     <Link href="/">Home</Link>
@@ -24,16 +18,13 @@ export default function NavigationBar({ BurgerClick }) {
                 </div>
                 <div className="right-nav-buttons">
                     {isLoggedIn ? (
-                        <UserCard userData={user} />
+                        <UserCard
+                            userData={user}
+                            userClick={() => {
+                                router.visit("/profile");
+                            }}
+                        />
                     ) : (
-                        // <>
-                        //     <Link href="/cars/create" id="link-like">
-                        //         New Car
-                        //     </Link>
-                        //     <Link href="/logout" method="post" id="link-like">
-                        //         Logout
-                        //     </Link>
-                        // </>
                         <>
                             <Link href="/login">Login</Link>
                             <Link href="/register">Register</Link>

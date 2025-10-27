@@ -30,4 +30,6 @@ Route::get('/about', function () {
 
 Route::resource('cars', CarController::class);
 
-
+Route::get("/profile", function(){
+    return Inertia::render('AppPages/UserProfile/ProfilePage');
+});
