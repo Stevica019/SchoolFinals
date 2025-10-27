@@ -21,6 +21,7 @@
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
     color: white;
+    position: absolute;
 }
 @media screen and (width<768px) {
     .hero {
