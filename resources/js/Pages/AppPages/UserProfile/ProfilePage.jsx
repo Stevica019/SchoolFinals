@@ -1,4 +1,5 @@
 import Button from "@/Components/Button/Button";
+import DescriptionWithAction from "@/Components/DescriptionWithAction/DescriptionWithAction";
 import { usePage, router } from "@inertiajs/react";
 import { Avatar, Box, Card, Typography, Stack } from "@mui/material";
 
@@ -27,24 +28,11 @@ export default function ProfilePage() {
 
     if (!auth || !user) {
         return (
-            <Box
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "white",
-                    m: "auto",
-                    gap: 2,
-                }}
-            >
-                <Typography>You must be logged in to view this page</Typography>
-                <Button
-                    text={"Login"}
-                    onclick={() => router.visit("/login")}
-                    customStyles={{ backgroundColor: "rgba(67, 180, 1, 1)" }}
-                />
-            </Box>
+            <DescriptionWithAction
+                text={"You must be logged in to see this page"}
+                buttonText={"Login"}
+                buttonAction={() => router.visit("/login")}
+            />
         );
     }
 
