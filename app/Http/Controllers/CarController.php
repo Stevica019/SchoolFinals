@@ -38,7 +38,7 @@ public function index()
             'name'  => 'required|string|max:255',
             'model' => 'required|string|max:255',
             'year'  => 'required|integer|min:1900|max:' . date('Y'),
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'images.*' => 'image|max:2048',
         ]);
 
         $paths = [];

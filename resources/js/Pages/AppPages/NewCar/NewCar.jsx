@@ -23,7 +23,6 @@ export default function NewCarPage() {
         const previews = files.map((file) => URL.createObjectURL(file));
         setImagePreviews(previews);
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -42,6 +41,9 @@ export default function NewCarPage() {
             },
         });
     };
+    console.log(data);
+
+    console.log(errors);
 
     return (
         <form className="new-car-form" onSubmit={handleSubmit}>
