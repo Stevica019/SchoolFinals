@@ -1,11 +1,6 @@
 .footer-container {
-    background: #020024;
-    background: linear-gradient(
-        120deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(9, 9, 121, 1) 35%,
-        rgba(0, 212, 255, 1) 100%
-    );
+    background-color: rgb(0, 0, 0);
+
     width: 100%;
     color: white;
     display: flex;
@@ -13,6 +8,8 @@
     align-items: center;
     justify-content: center;
     padding: 20px 0;
+    position: static;
+    bottom: 0;
 }
 .footer-input-div {
     display: flex;
