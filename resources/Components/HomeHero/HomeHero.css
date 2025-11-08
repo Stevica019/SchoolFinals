@@ -1,13 +1,12 @@
 .hero {
     position: relative;
     width: 100%;
-    min-height: 400px;
+    min-height: 500px;
     display: flex;
     justify-content: center;
 }
 .hero-image {
     width: 100%;
-    max-width: 1000px;
     height: 100%;
     position: absolute;
 }

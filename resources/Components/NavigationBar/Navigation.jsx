@@ -9,7 +9,11 @@ export default function NavigationBar({ BurgerClick }) {
     const user = auth?.user;
     return (
         <div className="Navigation-bar">
-            <img src={SSLogo} alt="Company log" />
+            <img
+                src={SSLogo}
+                alt="Company log"
+                onClick={() => router.visit("/")}
+            />
             <div className="nav-links">
                 <div className="nav-buttons">
                     <Link href="/">Home</Link>
