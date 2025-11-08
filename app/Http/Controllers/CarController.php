@@ -38,6 +38,10 @@ public function index()
             'name'  => 'required|string|max:255',
             'model' => 'required|string|max:255',
             'year'  => 'required|integer|min:1900|max:' . date('Y'),
+            "transimisionType" => 'required|string|max:8',
+            'engineType'=>'required|string|max:8',
+            "seats"=> 'required|string|min:2|max:7',
+            'doors'=> 'required|string|min:3|max:5',
             'images.*' => 'image|max:2048',
         ]);
 

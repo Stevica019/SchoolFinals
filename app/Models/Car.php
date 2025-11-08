@@ -13,6 +13,10 @@ class Car extends Model
         'name',
         'model',
         'year',
+        'transmissionType',
+        'engineType',
+        'seats',
+        'doors',
         'images',
     ];
 
