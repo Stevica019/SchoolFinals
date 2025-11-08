@@ -17,7 +17,7 @@ class LoginUserController extends Controller
     public function store(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'name' => ['required'],
             'password' => ['required'],
         ]);
 
@@ -27,8 +27,8 @@ class LoginUserController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Email or password is not correct.',
-        ])->onlyInput('email');
+            'name' => 'Username or Password is not correct.',
+        ])->onlyInput('name');
     }
 
     public function destroy(Request $request)

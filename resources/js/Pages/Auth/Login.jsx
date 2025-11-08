@@ -7,7 +7,7 @@ import { useForm } from "@inertiajs/react";
 
 const Login = () => {
     const { data, setData, post, processing, errors } = useForm({
-        email: "",
+        name: "",
         password: "",
     });
 
@@ -19,10 +19,10 @@ const Login = () => {
     return (
         <form className="form-fields" onSubmit={submitLogin}>
             <InputsField
-                label="Email"
-                type="email"
-                name="email"
-                onChange={(e) => setData("email", e.target.value)}
+                label="Username"
+                type="text"
+                name="name"
+                onChange={(e) => setData("name", e.target.value)}
             />
             <InputsField
                 label="Password"
@@ -50,7 +50,7 @@ const Login = () => {
                     <Link href={"/register"}>Register</Link>
                 </p>
             </div>
-            {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
+            {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
             {errors.password && (
                 <div style={{ color: "red" }}>{errors.password}</div>
             )}
